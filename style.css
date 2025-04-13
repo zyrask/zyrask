@@ -114,6 +114,42 @@ body {
     }
 }
 
-/* Tab Styles */
 .tab-container {
-   
+    margin-top: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: #9b4d96;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: #ff5c8d;
+}
+
+.tab-content {
+    display: none;
+    padding: 10px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Section */
+.section {
+    padding: 60px 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #121212;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
