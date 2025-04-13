@@ -3,108 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zyrask | Developer & Creator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Messiah's personal web page: game developer, coder, creator, and more.">
+    <title>Messiah's Ultimate About Me Page</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #6a0dff, #9b4de3, #111111);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            font-size: 2.5em;
+            color: #fff;
+            text-shadow: 0px 0px 10px rgba(255, 0, 255, 0.5);
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .intro {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .intro h2 {
+            color: #ff66b2;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        .intro p {
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin: 15px 0;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .tab {
+            background-color: #111111;
+            color: #ff66b2;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .tab:hover {
+            background-color: #9b4de3;
+            transform: scale(1.05);
+        }
+        .content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .tab-content {
+            display: none;
+            transition: all 0.4s ease-in-out;
+        }
+        .active-tab {
+            display: block;
+        }
+        .glow {
+            text-shadow: 0 0 15px #ff66b2, 0 0 30px #ff66b2, 0 0 45px #ff66b2, 0 0 60px #ff66b2;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            animation: pulse 5s infinite alternate;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header id="home">
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#vision">Vision</a>
-            <a href="#goals">Goals</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="hero">
-            <h1>Yo, I'm Messiah (aka Zy)</h1>
-            <p>A developer, gamer, and creator of fire stuff. I code, design, and bake—just ask!</p>
-            <a href="#projects" class="cta-button">Check Out My Work</a>
-        </div>
+    <header>
+        <div class="glow">Welcome to Messiah's Ultimate About Me Page</div>
     </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm Messiah, better known online as Zyrask. I'm 17 years old and passionate about a wide range of things, from game development and coding to design, and even baking. I’ve worked on multiple Roblox games, crafted custom UIs, and developed unique game mechanics. I’ve had a fascination with the technical side of things ever since I was young, and that’s only grown over the years. Coding isn’t just a job for me; it's a way of life. It’s an outlet where I can express my creativity, solve complex problems, and continue pushing myself forward.</p>
-        <p>When I’m not working on my projects, you can catch me playing games or baking something delicious in the kitchen. I’ve always been intrigued by the intersection of creativity and technology, and that’s exactly what I love about web development, game dev, and digital design. I believe in continuously improving and staying true to my unique style while always being open to learning new techniques and tools.</p>
-        <img src="https://i.ibb.co/SwpMG6ZW/Airbrush-Image-Enhancer.jpg" alt="Messiah's Image" class="profile-img">
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>I’ve honed a diverse skill set over the years, ranging from web development and game creation to graphic design and scripting. Here's what I bring to the table:</p>
-        <ul>
-            <li><strong>Web Development:</strong> HTML, CSS, JavaScript, React, Vue.js.</li>
-            <li><strong>Game Development:</strong> Roblox Studio, Lua scripting, Game mechanics, AI integration.</li>
-            <li><strong>UI/UX Design:</strong> User interface design, usability testing, wireframes, prototypes.</li>
-            <li><strong>Game Modding:</strong> Scripting, creating custom mods, assets, and game-changing systems.</li>
-            <li><strong>Baking:</strong> From cakes to cookies, I love experimenting with new recipes. My latest creation? A custom chocolate chip cookie with a twist.</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <p>Below are some of the coolest projects I’ve worked on. While I’m constantly working on new ideas, these are some of the highlights from my journey:</p>
-
+    <div class="container">
+        <div class="intro">
+            <h2>Who is Messiah?</h2>
+            <p>Hello! I'm <strong>Messiah</strong>, but online, you can call me <strong>Zy</strong> or <strong>Zyrask</strong>. I'm a passionate game developer, coder, and creator with a love for making projects that work, whether it's building a game or developing web applications. I also enjoy baking, so when I'm not coding, you'll probably catch me whipping up something sweet in the kitchen!</p>
+            <p>One of my biggest inspirations is <strong>Lil Uzi Vert</strong> — I'm all about his old tracks, though I don't really vibe with hits like "XO Tour Llif3". When I'm working, I often get into his music for some motivation!</p>
+            <p>I'm also a big fan of dogs and prefer working with teams in big projects. I love creating and developing on platforms like Roblox, and I don't just do this for the fun of it; I really get into the coding and design work.</p>
+        </div>
         <div class="tabs">
-            <button class="tab-button active" data-target="mythical-clash">Mythical Clash (Roblox)</button>
-            <button class="tab-button" data-target="randomizer-ui">Randomizer UI</button>
-            <button class="tab-button" data-target="game-tool">Game Tool</button>
+            <div class="tab" onclick="showTab(1)">My Projects</div>
+            <div class="tab" onclick="showTab(2)">Coding & Development</div>
+            <div class="tab" onclick="showTab(3)">Baking & Hobbies</div>
         </div>
-        <div class="tab-content active" id="mythical-clash">
-            <h3>Mythical Clash</h3>
-            <p>Mythical Clash was a fighting game I developed on Roblox. It featured innovative mechanics and a deep combat system. The game was unique because of its ability to offer players a variety of mythical powers to choose from, each with its own set of challenges. While the game is now privated, it remains one of the proudest accomplishments of my early development career.</p>
+
+        <div class="tab-content" id="tab1">
+            <h2>My Projects</h2>
+            <p>One of the projects I worked on was the Roblox game <strong>Mythical Clash</strong>, which I have since privated for various reasons. It was a passion project, and it got a lot of attention during its run, but I prefer to keep things on the down-low now. I’ve also worked on several game dev projects that never made it to release, including "Galactic Arena" and "Dungeon Quest"—two titles I might revisit in the future, depending on how things go!</p>
+            <p>In the future, I plan on releasing something even bigger, so stay tuned!</p>
         </div>
-        <div class="tab-content" id="randomizer-ui">
-            <h3>Randomizer UI</h3>
-            <p>Designed specifically for Roblox games, this user interface allows players to easily randomize game events, loot drops, and more. I created this as part of a toolset for game developers looking to add a fun, unpredictable element to their gameplay.</p>
+
+        <div class="tab-content" id="tab2">
+            <h2>Coding & Development</h2>
+            <p>I’ve been working on coding for as long as I can remember. My Roblox username is <strong>Zyraskk</strong>, and I’ve developed games, created scripts, and even got into some exploit scripting, though I only use my exploit for personal projects. I’m not about cheating, it’s about creativity.</p>
+            <p>Currently, I’m into <strong>web development</strong>, learning new languages, and integrating coding with my gaming projects. I've been playing around with creating mods and scripting for Minecraft, and I've started to build out some new projects on Roblox using the latest technologies.</p>
         </div>
-        <div class="tab-content" id="game-tool">
-            <h3>Game Tool</h3>
-            <p>This tool was created to make game design easier for developers. It’s a utility that helps automate and randomize specific game settings, such as spawn points, enemy types, and weather patterns. It’s still in development, but I’m excited about its potential.</p>
+
+        <div class="tab-content" id="tab3">
+            <h2>Baking & Hobbies</h2>
+            <p>Baking is a huge part of my life. When I'm not coding, I'm either trying out new recipes or baking for my friends and family. My go-to dessert is chocolate chip cookies, but I’ve also been known to bake some insane cakes.</p>
+            <p>Aside from that, I love dogs! I have a few pets, and they keep me grounded. Whenever I take a break from the screen, I hang out with them and enjoy some downtime. Life’s all about balance, right?</p>
         </div>
-    </section>
+    </div>
 
-    <section id="hobbies">
-        <h2>Hobbies & Interests</h2>
-        <p>Beyond coding and game development, I have a variety of interests and hobbies that I dive into when I’m looking to relax or just escape into something creative. Some of my top hobbies include:</p>
-        <ul>
-            <li><strong>Gaming:</strong> I love playing games, whether it’s RPGs, action-adventure, or strategy games. My go-to platforms are Roblox, PC, and consoles.</li>
-            <li><strong>Music:</strong> I’m big on music, especially rap. Lil Uzi Vert is one of my favorite artists, with his older tracks being my top picks. But I also enjoy exploring different genres of music.</li>
-            <li><strong>Baking:</strong> I take a lot of pride in baking, from cookies to cakes. My experiments with flavor combinations and decoration are something I’m passionate about.</li>
-        </ul>
-    </section>
+    <div class="image-container">
+        <img src="https://i.ibb.co/SwpMG6ZW/Airbrush-Image-Enhancer.jpg" alt="Messiah's Image">
+    </div>
 
-    <section id="vision">
-        <h2>Vision for the Future</h2>
-        <p>Looking ahead, I want to continue building the skills that have already helped me become a better developer and creator. But I also want to take on bigger challenges—projects that push me beyond my comfort zone and give me a chance to make something that others can enjoy and learn from.</p>
-        <p>I want to work on more advanced games, enhance my knowledge of web development, and expand my network of fellow creators. I hope to collaborate on larger projects with teams, take on freelance work, and eventually even start my own development studio. But most importantly, I want to create experiences that inspire others to follow their own creative pursuits.</p>
-    </section>
+    <script>
+        function showTab(tabIndex) {
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(tab => tab.classList.remove('active-tab'));
 
-    <section id="goals">
-        <h2>Personal Goals</h2>
-        <p>Here’s a look at some of the personal goals I’ve set for myself in the short and long term:</p>
-        <ul>
-            <li><strong>Short-term:</strong> Finish developing my game tool and launch a beta version. Expand my personal brand and gain more exposure within the game development community.</li>
-            <li><strong>Long-term:</strong> Build my own game development studio, release multiple successful games, and grow my audience. Learn new programming languages and expand my web development skills.</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>You can hit me up through:</p>
-        <ul>
-            <li><a href="https://discord.com/users/zyrask">Discord: zyrask</a></li>
-            <li><a href="https://www.roblox.com/users/yourID/profile">Roblox: zyraskk</a></li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Zyrask | All Rights Reserved</p>
-    </footer>
-
-    <script src="script.js"></script>
+            const activeTab = document.getElementById('tab' + tabIndex);
+            activeTab.classList.add('active-tab');
+        }
+    </script>
 </body>
 </html>
