@@ -3,205 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messiah - Zy/Zyrask</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #cc338f, #4c1d94, #2b2b2b);
-            color: white;
-            overflow-x: hidden;
-            height: 100vh;
-            scroll-behavior: smooth;
-            line-height: 1.6;
-        }
-
-        header {
-            position: relative;
-            height: 100vh;
-            background-image: url('https://i.ibb.co/SwpMG6ZW/Airbrush-Image-Enhancer.jpg');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            padding-top: 20%;
-            color: #fff;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #f8f8f8;
-            margin-top: 20px;
-            text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .section {
-            padding: 60px;
-            text-align: center;
-            transition: all 0.5s ease;
-        }
-
-        .tab-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .tab-button {
-            background-color: #6a1b9a;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 0 10px #ff00ff;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .tab-button:hover {
-            background-color: #9c27b0;
-            transform: scale(1.05);
-        }
-
-        .tab-content {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #2b2b2b;
-            color: #ccc;
-            font-size: 1rem;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        footer p a {
-            color: #ff00ff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer p a:hover {
-            text-decoration: underline;
-        }
-
-        .glowing-text {
-            color: #ff00ff;
-            text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-            100% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
-        }
-
-        .container {
-            margin-top: 40px;
-        }
-
-        .container h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .container p {
-            font-size: 1.1rem;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
-
-        .container .fake-projects {
-            margin-top: 30px;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #ff00ff;
-        }
-
-        .container .fake-projects h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .container .fake-projects p {
-            font-size: 1.1rem;
-        }
-    </style>
+    <title>Messiah's Webpage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1 class="glowing-text">Messiah (Zy/Zyrask)</h1>
-        <p>Developer | Gamer | Web Designer | Baker | Music Enthusiast</p>
+        <canvas id="canvas"></canvas>
+        <div class="content">
+            <h1>Messiah</h1>
+            <p class="intro-text">Welcome to my personal website! I'm a developer, gamer, and much more. Explore below!</p>
+        </div>
     </header>
 
-    <div class="section container">
-        <h2>About Me</h2>
-        <p>Hey! I'm Messiah, also known as Zy or Zyrask online. I'm 17 years old and currently passionate about web development, game coding, baking, and creating cool projects. I used to work at several Roblox servers, developing various games. I enjoy experimenting with scripts, especially creating custom scripts for Roblox, though I don’t use them for cheating—just for learning and building. I also love Lil Uzi Vert, especially his older songs, and I'm not really into stuff like "XO Tour Llif3." I’m also a huge dog lover.</p>
-        <p>My birthday is on March 30th, so I always make sure to celebrate in style. I’ve worked on a number of projects in the past, and one of my biggest creations was a game called “Mythical Clash.” I eventually privated it but learned a lot from that project. My interests span far and wide, but I’m most focused on making things come to life through code and creativity.</p>
-    </div>
-
-    <div class="section container">
-        <h2>My Projects</h2>
+    <div class="section">
         <div class="tab-container">
-            <a href="#" class="tab-button" data-tab="mythical-clash">Mythical Clash</a>
-            <a href="#" class="tab-button" data-tab="robotics-expo">Robotics Expo</a>
-            <a href="#" class="tab-button" data-tab="future-project">Future Projects</a>
+            <a href="javascript:void(0)" class="tab-button" onclick="openTab('about')">About Me</a>
+            <a href="javascript:void(0)" class="tab-button" onclick="openTab('projects')">My Projects</a>
+            <a href="javascript:void(0)" class="tab-button" onclick="openTab('contact')">Contact</a>
         </div>
-
-        <div id="mythical-clash" class="tab-content">
-            <h3>Mythical Clash</h3>
-            <p>A game about mythical creatures, strategy, and epic battles. It gained a lot of traction, but after some time, I decided to take it down. The code was solid, and the concept was fun, but I wanted to explore new ideas.</p>
+        <div id="about" class="tab-content">
+            <h2>About Me</h2>
+            <p>Hi, I'm Messiah. I'm into web development, coding games, baking, and more...</p>
         </div>
-
-        <div id="robotics-expo" class="tab-content">
-            <h3>Robotics Expo</h3>
-            <p>This was a project where I built a virtual robotics showcase. Players could interact with futuristic robots and participate in challenges. It never saw full release, but it was an exciting experiment in game mechanics and AI integration.</p>
+        <div id="projects" class="tab-content">
+            <h2>My Projects</h2>
+            <p>Check out my past projects, including games and web apps...</p>
         </div>
-
-        <div id="future-project" class="tab-content">
-            <h3>Future Projects</h3>
-            <p>I’m constantly coming up with new ideas. Expect to see more in the future, including game engines and experimental designs. Stay tuned for what's to come!</p>
+        <div id="contact" class="tab-content">
+            <h2>Contact</h2>
+            <p>Reach me at <strong>zyrask</strong> on Discord or Roblox!</p>
         </div>
     </div>
 
     <footer>
-        <p>Reach out to me on <a href="https://discordapp.com/users/Zyrask" class="glowing-text">Discord</a> or <a href="https://roblox.com/users/Zyraskk" class="glowing-text">Roblox</a></p>
+        <p>&copy; 2025 Messiah | <a href="https://github.com/zyrask">GitHub</a></p>
     </footer>
 
-    <script>
-        const tabs = document.querySelectorAll('.tab-button');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = document.getElementById(tab.dataset.tab);
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                target.classList.add('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
