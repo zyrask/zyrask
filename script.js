@@ -1,17 +1,25 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
+// JavaScript to toggle between different tabs
+function showTab(tabIndex) {
+    // Get all tabs and tab contents
+    const allTabs = document.querySelectorAll('.tab-content');
+    const allTabButtons = document.querySelectorAll('.tab');
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = document.getElementById(button.dataset.target);
+    // Hide all tab contents
+    allTabs.forEach(tab => tab.classList.remove('active-tab'));
 
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+    // Remove active class from all tab buttons
+    allTabButtons.forEach(button => button.classList.remove('active'));
 
-            button.classList.add('active');
-            targetTab.classList.add('active');
-        });
-    });
+    // Show the clicked tab content
+    const activeTab = document.getElementById('tab' + tabIndex);
+    activeTab.classList.add('active-tab');
+
+    // Add active class to the clicked tab button for styling
+    const activeTabButton = document.querySelectorAll('.tab')[tabIndex - 1];
+    activeTabButton.classList.add('active');
+}
+
+// Set the default tab to be open when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    showTab(1); // Set the first tab as active by default
 });
