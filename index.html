@@ -1,44 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messiah's Webpage</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messiah (Zy / Zyrask) - About Me</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #141414;
+      color: #fff;
+      text-align: center;
+      padding: 50px 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: bold;
+      color: #ff4f96;
+      text-shadow: 0 0 10px rgba(255, 79, 150, 0.6);
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+      color: #d1d1d1;
+    }
+
+    header img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 79, 150, 0.6);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    /* Animation Styles */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Navigation and Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .tab {
+      background-color: #ff4f96;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
+    }
+
+    .tab:hover {
+      background-color: #e04080;
+    }
+
+    .tab-content {
+      display: none;
+      background-color: #121212;
+      color: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 79, 150, 0.4);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .tab.active .tab-content {
+      display: block;
+    }
+
+    .tab-content h2 {
+      font-size: 2em;
+      color: #ff4f96;
+    }
+
+    /* Scroll Animation */
+    .scroll-animation {
+      animation: scrollEffect 1s ease-in-out;
+      opacity: 0;
+    }
+
+    @keyframes scrollEffect {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section {
+      margin-top: 60px;
+      padding: 20px;
+    }
+
+    .content-section p {
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: #ff4f96;
+      font-size: 1.8em;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #141414;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.9em;
+      margin-top: 60px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    footer a {
+      color: #ff4f96;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <canvas id="canvas"></canvas>
-        <div class="content">
-            <h1>Messiah</h1>
-            <p class="intro-text">Welcome to my personal website! I'm a developer, gamer, and much more. Explore below!</p>
-        </div>
-    </header>
+  <header>
+    <img src="https://i.ibb.co/SwpMG6ZW/Airbrush-Image-Enhancer.jpg" alt="Messiah's Picture">
+    <h1>Messiah (Zy / Zyrask)</h1>
+    <p>Web Developer | Game Developer | Creator | Baking Enthusiast | Techie</p>
+  </header>
 
-    <div class="section">
-        <div class="tab-container">
-            <a href="javascript:void(0)" class="tab-button" onclick="openTab('about')">About Me</a>
-            <a href="javascript:void(0)" class="tab-button" onclick="openTab('projects')">My Projects</a>
-            <a href="javascript:void(0)" class="tab-button" onclick="openTab('contact')">Contact</a>
-        </div>
-        <div id="about" class="tab-content">
-            <h2>About Me</h2>
-            <p>Hi, I'm Messiah. I'm into web development, coding games, baking, and more...</p>
-        </div>
-        <div id="projects" class="tab-content">
-            <h2>My Projects</h2>
-            <p>Check out my past projects, including games and web apps...</p>
-        </div>
-        <div id="contact" class="tab-content">
-            <h2>Contact</h2>
-            <p>Reach me at <strong>zyrask</strong> on Discord or Roblox!</p>
-        </div>
+  <div class="tabs">
+    <a href="#bio" class="tab">About Me</a>
+    <a href="#projects" class="tab">Projects</a>
+    <a href="#skills" class="tab">Skills</a>
+    <a href="#contact" class="tab">Contact</a>
+  </div>
+
+  <div id="bio" class="tab active">
+    <div class="tab-content">
+      <h2>About Me</h2>
+      <p class="scroll-animation">Hello! I'm Messiah, also known as Zy or Zyrask online. I'm 17 years old and I have a passion for web development, coding games, creating projects, and baking. My interests stretch across multiple fields—I'm all about learning new skills, creating unique experiences, and exploring new tech. Music plays a big part in my life too, especially Lil Uzi Vert’s older tracks. “XO Tour Llif3” is overrated, in my opinion, but I vibe with his earlier music.</p>
+      <p class="scroll-animation">I've worked on several Roblox projects and have had a hand in game development. One of my past projects was "Mythical Clash," but it's now privated. I’m also a creator of Roblox exploits and scripts, though I don’t use them for cheating—just for creating unique functionalities and experiences.</p>
     </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Messiah | <a href="https://github.com/zyrask">GitHub</a></p>
-    </footer>
+  <div id="projects" class="tab">
+    <div class="tab-content">
+      <h2>My Projects</h2>
+      <p class="scroll-animation">I’ve built a variety of projects over the years, ranging from small utilities to large-scale games. Some of my notable Roblox projects include "Mythical Clash," which I mentioned earlier. This game had tons of potential, but I decided to private it for now.</p>
+      <p class="scroll-animation">Apart from Roblox, I’ve been working on a few web development projects that aim to bring clean, efficient designs and user experiences. One of my ongoing projects is a personal portfolio where I showcase my skills and experiments in web development.</p>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <div id="skills" class="tab">
+    <div class="tab-content">
+      <h2>Skills & Expertise</h2>
+      <p class="scroll-animation">Here are some of the skills I’m currently focusing on:</p>
+      <ul>
+        <li>Web Development (HTML, CSS, JavaScript)</li>
+        <li>Game Development (Roblox Studio, Lua)</li>
+        <li>Automation Scripting</li>
+        <li>Problem-Solving and Debugging</li>
+        <li>Baking (Yes, I can make a mean batch of cookies)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="contact" class="tab">
+    <div class="tab-content">
+      <h2>Contact Me</h2>
+      <p class="scroll-animation">You can reach out to me on Discord or Roblox:</p>
+      <p class="scroll-animation">Discord: <strong>Zyrask</strong></p>
+      <p class="scroll-animation">Roblox: <strong>Zyraskk</strong></p>
+      <div class="social-links">
+        <a href="https://discord.com/users/Zyrask" target="_blank">Discord</a>
+        <a href="https://roblox.com/users/Zyraskk" target="_blank">Roblox</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Messiah (Zy / Zyrask). All rights reserved.</p>
+    <p>Made with passion for web development and game design.</p>
+    <p>Contact me for collaborations and project inquiries.</p>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
 </body>
+
 </html>
