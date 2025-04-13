@@ -1,67 +1,72 @@
-// Canvas Animation Setup
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+// Tab functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all the tabs
+  const tabs = document.querySelectorAll('.tab');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  // Loop through each tab
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove 'active' class from all tabs and hide their content
+      tabs.forEach(item => {
+        item.classList.remove('active');
+        item.querySelector('.tab-content').style.display = 'none';
+      });
 
-let particlesArray = [];
+      // Add 'active' class to clicked tab
+      tab.classList.add('active');
+      tab.querySelector('.tab-content').style.display = 'block'; // Show content of the clicked tab
+    });
+  });
+});
 
-class Particle {
-    constructor(x, y, size, speedX, speedY) {
-        this.x = x;
-        this.y = y;
-        this.size = size;
-        this.speedX = speedX;
-        this.speedY = speedY;
-        this.color = '#ff00ff';
+// Scroll animations for content sections
+const contentSections = document.querySelectorAll('.content-section');
+
+const options = {
+  root: null,
+  threshold: 0.1,
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('scroll-animation');
+      observer.unobserve(entry.target);
     }
+  });
+}, options);
 
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.size > 0.2) this.size -= 0.1;
-        if (this.x > canvas.width || this.x < 0 || this.y > canvas.height || this.y < 0) {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-        }
-    }
+contentSections.forEach(section => {
+  observer.observe(section);
+});
 
-    draw() {
-        ctx.fillStyle = this.color;
-        ctx.strokeStyle = 'white';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-    }
-}
+// Social links hover animation
+const socialLinks = document.querySelectorAll('.social-links a');
 
-function createParticles(e) {
-    let xPos = e.x;
-    let yPos = e.y;
-    let speedX = Math.random() * 3 - 1.5;
-    let speedY = Math.random() * 3 - 1.5;
-    let size = Math.random() * 5 + 1;
-    particlesArray.push(new Particle(xPos, yPos, size, speedX, speedY));
-}
+socialLinks.forEach(link => {
+  link.addEventListener('mouseenter', function() {
+    link.style.transform = 'scale(1.3)';
+    link.style.transition = 'transform 0.3s';
+  });
 
-function animateCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
-    }
-    requestAnimationFrame(animateCanvas);
-}
+  link.addEventListener('mouseleave', function() {
+    link.style.transform = 'scale(1)';
+    link.style.transition = 'transform 0.3s';
+  });
+});
 
-canvas.addEventListener('mousemove', createParticles);
-animateCanvas();
+// Smooth scrolling to anchor links
+const scrollLinks = document.querySelectorAll('a[href^="#"]');
 
-// Tab Switching Logic
-function openTab(tabName) {
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(content => content.classList.remove('active'));
-    document.getElementById(tabName).classList.add('active');
-}
+scrollLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop - 100, // Offset to avoid covering the element with fixed nav
+      behavior: 'smooth',
+    });
+  });
+});
